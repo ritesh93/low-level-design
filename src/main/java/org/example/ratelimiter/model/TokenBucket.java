@@ -1,6 +1,6 @@
 package org.example.ratelimiter.model;
 
-public class TokenBucket {
+public class TokenBucket implements RateLimitingEntity{
     private final long capacity;
     private final double refillRate;
     private double currentTokens;

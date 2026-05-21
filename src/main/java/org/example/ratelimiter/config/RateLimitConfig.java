@@ -1,19 +1,17 @@
 package org.example.ratelimiter.config;
 
-public class RateLimitConfig {
-    private final long capacity;
-    private final double refillRate;
+import org.example.ratelimiter.model.RateLimitingEntity;
 
-    public RateLimitConfig(long capacity, double refillRate){
+public abstract class RateLimitConfig {
+    private final long capacity;
+
+    public RateLimitConfig(long capacity){
         this.capacity = capacity;
-        this.refillRate = refillRate;
     }
 
     public long getCapacity(){
         return capacity;
     }
 
-    public double getRefillRate() {
-        return refillRate;
-    }
+    public abstract RateLimitingEntity createEntity();
 }
